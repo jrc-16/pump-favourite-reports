@@ -1,0 +1,136 @@
+{
+  "pulseHeader" : {
+    "mep" : "inout",
+    "pulseType" : "document",
+    "pulseClass" : "pumpCo.user.profile.get.response",
+    "endpointId" : "01A83524-59C2-4C32-8DA8-2D900C57A2AD",
+    "referenceId" : "40E56855-381C-4785-82D6-9B72343118EA",
+    "referer" : "http://dev.cnect.to/iotaa?socket=false",
+    "pulseId" : "1018407e-0336-4145-87c4-bb169942fb7f",
+    "timestamp" : "2017-07-28T09:00:21.764",
+    "instanceRoutingSlip" : [ ]
+  },
+  "pulseBody" : {
+    "profileImage" : {
+      "referenceID" : "uploads/iotaa/images/admin.jpg"
+    },
+    "profileBody" : {
+      "username" : "alex.adams",
+      "name" : "Alex",
+      "surname" : "Adams",
+      "gender" : "",
+      "dob" : "",
+      "id" : "597ae921a2647c76c14d911c",
+      "status" : "active",
+      "email" : "alex@example.com",
+      "domain" : "admin"
+    },
+    "contactDetails" : {
+      "address" : {
+        "address1" : "1",
+        "town" : "bristol",
+        "county" : "county",
+        "postcode" : "AB1 1AB"
+      },
+      "phone" : [ {
+        "name" : "mobile",
+        "value" : "016321234565"
+      } ],
+      "email" : [ {
+        "type" : [ "pref" ],
+        "value" : "alex@example.com",
+        "searchValue" : "alex@example.com"
+      }, {
+        "type" : [ "system-primary" ],
+        "value" : "alex.adams@pumpco.cnect.to"
+      } ]
+    },
+    "extensions" : { },
+    "visibility" : {
+      "visible" : true
+    },
+    "vcard" : {
+      "uid" : "597ae921a2647c76c14d911c",
+      "fn" : "Alex Adams",
+      "n" : {
+        "given-name" : "Alex",
+        "family-name" : "Adams"
+      },
+      "adr" : {
+        "street-address" : [ "1" ],
+        "locality" : "bristol",
+        "region" : "county",
+        "postal-code" : "AB1 1AB",
+        "country-name" : ""
+      },
+      "bday" : "",
+      "photo" : "uploads/iotaa/images/admin.jpg",
+      "tel" : [ {
+        "type" : [ "mobile" ],
+        "value" : "016321234565",
+        "unformatted" : "016321234565"
+      } ],
+      "email" : [ {
+        "type" : [ "pref" ],
+        "value" : "alex@example.com",
+        "searchValue" : "alex@example.com"
+      }, {
+        "type" : [ "system-primary" ],
+        "value" : "alex.adams@pumpco.cnect.to"
+      } ]
+    },
+    "team" : [ ],
+    "preferences" : {
+      "location" : [ {
+        "type" : "tz",
+        "label" : "time zone",
+        "value" : "Europe/London"
+      }, {
+        "type" : "locale",
+        "label" : "locale",
+        "value" : "en-gb"
+      } ],
+      "units" : [ {
+        "type" : "height",
+        "value" : "cm",
+        "label" : "height"
+      }, {
+        "type" : "weight",
+        "value" : "kg",
+        "label" : "weight"
+      }, {
+        "type" : "rate",
+        "value" : "bpm",
+        "label" : "heart rate"
+      }, {
+        "type" : "bloodPressure",
+        "value" : "mmHg",
+        "label" : "blood pressure"
+      }, {
+        "type" : "bloodGlucose",
+        "value" : "mmol/L",
+        "label" : "blood glucose"
+      }, {
+        "type" : "reading",
+        "value" : "mmol/L",
+        "label" : "blood reading"
+      }, {
+        "type" : "energy",
+        "value" : "kcal",
+        "label" : "energy"
+      }, {
+        "type" : "distance",
+        "value" : "m",
+        "label" : "distance"
+      }, {
+        "type" : "capacity",
+        "value" : "L",
+        "label" : "capacity"
+      } ]
+    },
+    "current" : { },
+    "status" : {
+      "code" : "success"
+    }
+  }
+}

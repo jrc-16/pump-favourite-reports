@@ -1,0 +1,25 @@
+<!-- // Sidebar -->
+<div name="home" class="iotaa-sidebar screen">
+    <div class="profile">
+        <div class="profile-info">
+            <p data-bind="i18n: 'franchise-office'"></p>
+            <!-- ko with:$data.vcard -->
+            <p data-bind="text:$data.fn" class="profile-name"><!-- fullname --></p>
+            <!-- /ko -->
+        </div>
+        <div class="sidebar-menu" data-bind="foreach:$data.actions">
+            <button data-bind="text:$data.label, click:$data.fn" class="btn"></button>
+        </div>
+
+        <!-- @JC 24/05/18: favourite reports -->
+        <!-- <div data-bind="foreach: $data.appflowList">
+          <p data-bind="text: $data"></p>
+        </div> -->
+
+        <select data-bind="options: $data.appflowList" class="txt width8 btn"></select>
+
+    </div>
+    <div class="logo">
+        <img data-bind="attr:{src:$data.logo}" class="profile-box"></img>
+    </div>
+</div>

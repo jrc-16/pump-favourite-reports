@@ -1,0 +1,291 @@
+{
+       "pulseHeader": {
+           "mep": "in",
+           "pulseId": "5b066ea552aa26d69defdf5c",
+           "endpointId": "5b066ea552aa26d69defdf5b",
+           "referenceId": "5b066ea552aa26d69defdf5a",
+           "pulseClass": "pumpCo.form.list.request",
+           "pulseType": "command",
+           "pulseResponseTimeout":10000,
+           "componentId":"5b066e8f52aa26d69defd10b",
+           "timestamp": "2018-05-24T11:49:57.177"
+       },
+       "pulseBody": {
+            "category": ["iotaaFranchiseReporting"]
+       }
+}
+
+{
+  "pulseHeader" : {
+    "mep" : "in",
+    "pulseType" : "document",
+    "pulseClass" : "pumpCo.form.list.response",
+    "endpointId" : "5b066ea552aa26d69defdf5b",
+    "referenceId" : "5b066ea552aa26d69defdf5a",
+    "referer" : "",
+    "pulseId" : "cb3e4942-2e0f-4167-adf2-75386e642e4c",
+    "timestamp" : "2018-05-24T11:49:57.195",
+    "requestingComponentId" : "5b066e8f52aa26d69defd10b",
+    "componentId" : "5b066e8f52aa26d69defd09a",
+    "instanceRoutingSlip" : [ ]
+  },
+  "pulseBody" : {
+    "questionnaire" : [ {
+      "id" : "5b066e5752aa26d69defcd5d",
+      "name" : "iotaa.form.reporting.franchise.actions.headOffice",
+      "label" : "Actions Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd60",
+      "name" : "iotaa.form.reporting.client.movement.headOffice",
+      "label" : "Client Movement Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd62",
+      "name" : "iotaa.form.reporting.client.highRiskAreas.headOffice",
+      "label" : "Client High Risk Areas",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd65",
+      "name" : "iotaa.form.reporting.client.kettleReboils.headOffice",
+      "label" : "Kettle Reboiling Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd68",
+      "name" : "iotaa.form.reporting.client.kettleNoUse.headOffice",
+      "label" : "No Kettle Use Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd6d",
+      "name" : "iotaa.form.reporting.client.detailedActivity.headOffice",
+      "label" : "Client Detailed Activity Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd73",
+      "name" : "iotaa.form.reporting.residency.headOffice",
+      "label" : "Residency Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd76",
+      "name" : "iotaa.form.reporting.servicePackages.headOffice",
+      "label" : "Service Package Status Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd7f",
+      "name" : "iotaa.form.reporting.client.temperature.headOffice",
+      "label" : "Client Temperature Graph",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd81",
+      "name" : "iotaa.form.reporting.client.lux.headOffice",
+      "label" : "Client Light-level Graph",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd87",
+      "name" : "iotaa.form.reporting.client.nightTimeActivity.headOffice",
+      "label" : "Night Time Activity Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd8a",
+      "name" : "iotaa.form.reporting.national.deviceAnalysis.headOffice",
+      "label" : "Device Analysis Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd8c",
+      "name" : "iotaa.form.reporting.national.scenarioAnalysis.headOffice",
+      "label" : "Scenario Analysis Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd8e",
+      "name" : "iotaa.form.reporting.national.alertAiAnalysis.headOffice",
+      "label" : "Alert & AI Analysis Report",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    }, {
+      "id" : "5b066e5752aa26d69defcd90",
+      "name" : "iotaa.form.reporting.client.activity.headOffice",
+      "label" : "Client Activity Graph",
+      "type" : "TYPE_FORM",
+      "categories" : [ "iotaaFranchiseReporting" ],
+      "context" : { },
+      "sortOrder" : 2147483647,
+      "requirements" : { }
+    } ],
+    "status" : {
+      "code" : "success"
+    }
+  }
+}
+
+{
+       "pulseHeader": {
+           "mep": "inout",
+           "pulseId": "5b066ea552aa26d69defdf5f",
+           "endpointId": "5b066ea552aa26d69defdf5e",
+           "referenceId": "5b066ea552aa26d69defdf5d",
+           "pulseClass": "pumpCo.user.appState.list.request",
+           "pulseType": "command",
+           "pulseResponseTimeout":10000,
+           "componentId":"5b066e8f52aa26d69defd10b",
+           "timestamp": "2018-05-24T11:49:57.213"
+       },
+       "pulseBody": {
+
+       }
+ }
+
+{
+  "pulseHeader" : {
+    "mep" : "inout",
+    "pulseType" : "document",
+    "pulseClass" : "pumpCo.user.appState.list.response",
+    "endpointId" : "5b066ea552aa26d69defdf5e",
+    "referenceId" : "5b066ea552aa26d69defdf5d",
+    "referer" : "",
+    "pulseId" : "a0b4b473-9c3c-4f35-9b3d-3ecfde0a5a86",
+    "timestamp" : "2018-05-24T11:49:57.245",
+    "requestingComponentId" : "5b066e8f52aa26d69defd10b",
+    "componentId" : "5b066e8f52aa26d69defd113",
+    "instanceRoutingSlip" : [ ]
+  },
+  "pulseBody" : {
+    "state" : { },
+    "status" : {
+      "code" : "success"
+    }
+  }
+}
+
+{
+       "pulseHeader": {
+           "mep": "inout",
+           "pulseId": "5b066ea552aa26d69defdf62",
+           "endpointId": "5b066ea552aa26d69defdf61",
+           "referenceId": "5b066ea552aa26d69defdf60",
+           "pulseClass": "pumpCo.user.appState.save.request",
+           "pulseType": "command",
+           "pulseResponseTimeout":10000,
+           "componentId":"5b066e8f52aa26d69defd10b",
+           "timestamp": "2018-05-24T11:49:57.248"
+       },
+       "pulseBody": {
+           "state": {"favourites":["a","b","c"]}
+       }
+ }
+
+{
+  "pulseHeader" : {
+    "mep" : "inout",
+    "pulseType" : "document",
+    "pulseClass" : "pumpCo.user.appState.save.response",
+    "endpointId" : "5b066ea552aa26d69defdf61",
+    "referenceId" : "5b066ea552aa26d69defdf60",
+    "referer" : "",
+    "pulseId" : "9b551963-5041-40c3-8470-ec4dabaf78c9",
+    "timestamp" : "2018-05-24T11:49:57.256",
+    "requestingComponentId" : "5b066e8f52aa26d69defd10b",
+    "componentId" : "5b066e8f52aa26d69defd113",
+    "instanceRoutingSlip" : [ ]
+  },
+  "pulseBody" : {
+    "status" : {
+      "code" : "success"
+    }
+  }
+}
+
+{
+       "pulseHeader": {
+           "mep": "inout",
+           "pulseId": "5b066ea552aa26d69defdf65",
+           "endpointId": "5b066ea552aa26d69defdf64",
+           "referenceId": "5b066ea552aa26d69defdf63",
+           "pulseClass": "pumpCo.user.appState.list.request",
+           "pulseType": "command",
+           "pulseResponseTimeout":10000,
+           "componentId":"5b066e8f52aa26d69defd10b",
+           "timestamp": "2018-05-24T11:49:57.264"
+       },
+       "pulseBody": {
+
+       }
+ }
+
+{
+  "pulseHeader" : {
+    "mep" : "inout",
+    "pulseType" : "document",
+    "pulseClass" : "pumpCo.user.appState.list.response",
+    "endpointId" : "5b066ea552aa26d69defdf64",
+    "referenceId" : "5b066ea552aa26d69defdf63",
+    "referer" : "",
+    "pulseId" : "58f024c5-8f3d-43e3-966e-602d9f599dec",
+    "timestamp" : "2018-05-24T11:49:57.272",
+    "requestingComponentId" : "5b066e8f52aa26d69defd10b",
+    "componentId" : "5b066e8f52aa26d69defd113",
+    "instanceRoutingSlip" : [ ]
+  },
+  "pulseBody" : {
+    "state" : {
+      "favourites" : [ "a", "b", "c" ]
+    },
+    "status" : {
+      "code" : "success"
+    }
+  }
+}
