@@ -36,7 +36,21 @@ the.App.onReady(function () {
 
         // @JC 24/05/18: i think i need a observable array
         my.model.appflowList = phil.observe( [] );
+        my.model.reportItem = phil.observe( [] );
+        my.model.addReportItem = phil.observe( [] );        
 
+        my.model.changeReport = function( sum ) {
+          console.log('// changeReport called');
+          console.log( sum );
+debugger
+
+          // @JC 25/05/18 - 3.30am: at this point i want to add the select item to the AppState pulse.
+          // on AppState pulse response, clear the addReportItem, ready for user to add another favourite.
+          if( my.model.addReportItem().length < 1 ) {
+            my.model.addReportItem.push( my.model.reportItem );
+          }
+
+        };
 
     } );
 
@@ -119,7 +133,10 @@ the.App.onReady(function () {
         my.$alert("CAREGiver search not implemented for demo");
     };
 
-    // #### pulse responses #### ///
+    // #### avourite reorts: functions #### ///
+
+
+    // #### favourite reorts: pulse responses #### ///
     my.$on( "pumpCo.form.list.response", function( pulse ) {
 
       console.log("// reached listResponse");
@@ -130,17 +147,17 @@ the.App.onReady(function () {
       var list = __get( "pulseBody.questionnaire", pulse );
 
 
-debugger
+//debugger
       for( var i=0; i < list.length; i++ ) {
     	   // var appflowItem = my.model.appflowList()[i];
          // console.log( appflowItem.label );
 
          var listItem = list[i];
-         console.log( listItem.label );
+         // console.log( listItem.label );
 
          my.model.appflowList.push( listItem.label );
 
-         console.log( my.model.appflowList() );
+         // console.log( my.model.appflowList() );
 
       }
     } );
