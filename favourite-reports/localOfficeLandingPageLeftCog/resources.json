@@ -32,9 +32,16 @@
         { "direction": "CONSUMER", "trait": "pumpco.system.core.cog", "version": "0.1" },
         { "direction": "PRODUCER", "trait": "internal.system.toast.update", "version": "0.1" },
 
-        // @JC 24/05/18: favourites system
+        // @JC 24/05/18: favourite reports
         {"direction": "PRODUCER","trait": "pumpCo.form.list.request", "version": "0.1"},
-        {"direction": "CONSUMER","trait": "pumpCo.form.list.response", "version": "0.1"}
+        {"direction": "CONSUMER","trait": "pumpCo.form.list.response", "version": "0.1"},
+
+        // @JC 25/05/18: AppState pulses for favourite reports
+        {"direction": "PRODUCER","trait": "pumpCo.user.appState.save.request", "version": "0.1"},
+        {"direction": "PRODUCER","trait": "pumpCo.user.appState.list.request", "version": "0.1"},
+        {"direction": "CONSUMER","trait": "pumpCo.user.appState.list.response", "version": "0.1"}
+
+        //{"direction": "CONSUMER","trait": "pumpCo.user.appState.save.response", "version": "0.1"}
 
     ],
     // Cards detail what Cards need to be loaded ( JS, CSS, HTML ) dynamically ( currently on AOS and PHIL )

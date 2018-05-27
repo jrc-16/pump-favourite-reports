@@ -34,22 +34,29 @@ the.App.onReady(function () {
             // { name:'CareGiverSearch', label:'CAREGiver Search', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) }
         ] );
 
-        // @JC 24/05/18: i think i need a observable array
+        // @JC 24/05/18: observables
         my.model.appflowList = phil.observe( [] );
         my.model.reportItem = phil.observe( [] );
-        my.model.addReportItem = phil.observe( [] );        
+        my.model.addReportItem = phil.observe( [] );
 
-        my.model.changeReport = function( sum ) {
-          console.log('// changeReport called');
-          console.log( sum );
-debugger
+        my.model.changeReport = function( data ) {
+          // console.log('// changeReport called');
+          // console.log( data );
 
-          // @JC 25/05/18 - 3.30am: at this point i want to add the select item to the AppState pulse.
+          // @JC 25/05/18
+          // At this point i want to add the select item to the AppState pulse.
           // on AppState pulse response, clear the addReportItem, ready for user to add another favourite.
-          if( my.model.addReportItem().length < 1 ) {
-            my.model.addReportItem.push( my.model.reportItem );
-          }
+          //if( my.model.addReportItem().length < 1 ) {
+          my.model.addReportItem.push( my.model.reportItem() );
+          //debugger
+          //}
 
+          // @JC 25/05/18: save the ovservable array to appState pulse
+          my.$pulse( "pumpCo.user.appState.save.request", {
+            "state": {
+              "favourites":my.model.addReportItem()
+            }
+          } );
         };
 
     } );
@@ -68,9 +75,15 @@ debugger
         // Request the User Profile from the user service
         my.$pulse( "internal.user.profile.request", {} );
 
-        // @JC 24/05/18 - favourite reports: requst the pulse when the cog has shown.
-        // Better than requesting outside of postShown.
-        my.$pulse( "pumpCo.form.list.request", {} );
+        // @JC 24/05/18 - favourite reports: populate the drop down when the cog has shown (Better than requesting outside of postShown.)
+        // filter by iotaaFranchiseReporting, to only show franchise reports in the dropdown
+        my.$pulse( "pumpCo.form.list.request", {
+          "category": ["iotaaFranchiseReporting"]
+        } );
+
+        // @JC 25/05/18 - get the list of saved reports ie AppState
+        my.$pulse( "pumpCo.user.appState.list.request", {} );
+
     } );
 
     /**
@@ -133,12 +146,9 @@ debugger
         my.$alert("CAREGiver search not implemented for demo");
     };
 
-    // #### avourite reorts: functions #### ///
-
-
     // #### favourite reorts: pulse responses #### ///
-    my.$on( "pumpCo.form.list.response", function( pulse ) {
 
+    my.$on( "pumpCo.form.list.response", function( pulse ) {
       console.log("// reached listResponse");
 
       // my.model.appflowList( __get( "pulseBody.questionnaire", pulse ) );
@@ -146,8 +156,6 @@ debugger
 
       var list = __get( "pulseBody.questionnaire", pulse );
 
-
-//debugger
       for( var i=0; i < list.length; i++ ) {
     	   // var appflowItem = my.model.appflowList()[i];
          // console.log( appflowItem.label );
@@ -158,9 +166,28 @@ debugger
          my.model.appflowList.push( listItem.label );
 
          // console.log( my.model.appflowList() );
-
       }
-    } );
+    });
+
+    // confirmation we have saved a favourite report
+    my.$on( "pumpCo.user.appState.save.response", function( pulse ) {
+      console.log( '// reached pumpCo.user.appState.save.response ' );
+      console.log( '- pumpCo.user.appState.save.response pulse is:' );
+      console.log( pulse );
+      console.log( '################# ################# ################# \n\n' );
+      my.$pulse( "pumpCo.user.appState.list.request", {} );
+    });
+
+    // get back a list of favourite reports
+    my.$on( "pumpCo.user.appState.list.response", function( pulse ) {
+      console.log( '// reached pumpCo.user.appState.list.response ' );
+      console.log( '- reached pumpCo.user.appState.list.response pulse is:' );
+      console.log( pulse );
+      console.log( '################# ################# ################# \n\n' );
+
+      // onload, push the saved appState report list to the addReportItem observable array, so to display right away
+      my.model.addReportItem( __get( "pulseBody.state.favourites", pulse ) );
+    });
 
     // Initialise the Cog
     my.$init();

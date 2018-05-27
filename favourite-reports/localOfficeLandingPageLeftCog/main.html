@@ -19,7 +19,7 @@
         <!-- ko text: console.log($data) --><!-- /ko -->
 
         <select data-bind="options: $data.appflowList, value: $data.reportItem" class="txt width8 btn"></select>
-        <button data-bind="text: 'Chagne report', click: $data.changeReport"></button>
+        <button data-bind="text: 'Pin report', click: $data.changeReport" class="width4 btn"></button>
         <!-- <p data-bind="text: $data.reportItem"></p> -->
 
         <div data-bind="foreach: $data.addReportItem">
