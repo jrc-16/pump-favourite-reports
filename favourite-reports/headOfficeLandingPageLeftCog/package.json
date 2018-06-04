@@ -1,0 +1,14 @@
+{
+  "name": "iotaa.headOfficeLandingPageLeftCog",
+  "version": "1.0.42",
+  "devDependencies": {},
+  "scripts": {
+    "dev": "cp main.js main.min.js",
+    "build": "uglifyjs main.js -c -m -o main.min.js",
+    "release": "npm version patch && npm run build",
+    "watch": "nodemon -e js --ignore '*.min.*' -x 'npm run dev' ",
+    "patch": "npm version patch",
+    "//prod": "task to switch to the production resources.json ( minified js )",
+    "prod": "mv resources.json resources.orig && mv resources.prod resources.json"
+  }
+}

@@ -19,19 +19,14 @@ the.App.onReady(function () {
         my.model.actions    = phil.observe( [
             // View all alerts
             { name:'Notifications', label:'Alerts', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) },
-            // View all alerts
-            { name:'Notifications', label:'Notifications', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) },
-            // User profile screen
-            { name:'Actions', label:'Actionable Insights', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) }
-            // User profile screen
-            // { name:'ConvCentre', label:'Messages', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) },
-            // All Apps
-            // { name:'AllApps',   label:'Apps',           fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) }
+            // AMONIS: 01/02/2018: Removed as non functional at time of pilot
             // View all devices installed
-            // AMONIS: 01/02/2018: non functional at time
-            // { name:'Clients', label:'Client Search', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) },
+            // { name:'Clients', label:'Clients Search', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) },
+            // AMONIS: 01/02/2018: Removed as non functional at time of pilot
+            // View all devices installed
+            // { name:'Clients', label:'Office Search', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) },
             // All Apps
-            // { name:'CareGiverSearch', label:'CAREGiver Search', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) }
+            { name:'AllApps', label:'Apps', fn:function( data, evt ){ my[ 'on' + data.name ]( data, evt ); }.bind( this ) }
         ] );
 
         // AMONIS: 25/05/2018: State object for saving
@@ -51,15 +46,14 @@ the.App.onReady(function () {
 
           // Prevent the same report from being added more than once
           for( var i=0; i < my.model.savedReports().length; i++ ) {
-          	var savedReport = my.model.savedReports()[ i ];
+            var savedReport = my.model.savedReports()[ i ];
 
-          	// Check if the selected report is already in the saved reports list
-          	// if it is, then display a toast notification that it is
-          	if( my.model.selectedReport().label === savedReport.label ) {          		
-          		my.$alert( my.model.selectedReport().label + " - has already been saved" );
-          		return
+            // Check if the selected report is already in the saved reports list
+            // if it is, then display a toast notification that it is
+            if( my.model.selectedReport().label === savedReport.label ) {
+              my.$alert( my.model.selectedReport().label + " - has already been saved" );
+              return
             }
-
           }
 
           // JCARNEY 01/06/18: commented out and ported over to dashboard.js
@@ -73,14 +67,16 @@ the.App.onReady(function () {
         my.model.onRemoveAll = function( data, evt ){
           // Clear the saved reports
           my.model.savedReports( [] );
+
           // Save the appState
           my.saveState();
         }
 
-        // Navigate to the selected report
+        // @JC 26/05/18: Navigate to the selected report
         my.model.redirectToReport = function( data ) {
           // Setup config for going to the selected report form
           var backpack = Forms.defaultBody.call( my, data.name, {} ); // Use call(my) to get around Forms call issue
+
           // Navigate to the default form space
           Navigation.navTo( "System.formSpace", backpack );
         };
@@ -106,15 +102,12 @@ the.App.onReady(function () {
 
     /**
      * Fired when the cog is shown
-     * ( Better than requesting outside of postShown )
-     *
-     * // #### pulse requests #### ///
      */
     my.$on( "postShown", function( params ){
         // Request the User Profile from the user service
         my.$pulse( "internal.user.profile.request", {} );
 
-        // JCARNEY 26/05/18: add in the category filter "iotaaFranchiseReporting"
+        // JCARNEY: add in the category filter "iotaaFranchiseReporting"
         // This appears to give us the list of reports that are at
         // tools > admin tasks > franchise reporting
         my.$pulse( "pumpCo.form.list.request", { "category": [ "iotaaFranchiseReporting" ] } );
@@ -158,12 +151,12 @@ the.App.onReady(function () {
         } );
     };
 
-    my.onActions = function(){
-        Navigation.navTo( "System.actionSpace", {} );
+    my.onSettings = function(){
+        Navigation.navTo( "System.controlCentreSpace", {} );
     }
 
     my.onClients= function(){
-        my.$alert( "TBC: All Clients List" );
+        my.$alert( "Note: Search not implemented in demo" );
         // Navigation.navTo( "System.deviceManagementSpace", {} );
     };
 
@@ -175,21 +168,12 @@ the.App.onReady(function () {
         Navigation.navTo( "System.HomeSpace", {} );
     };
 
-    my.onConvCentre = function(){
-        Navigation.navTo( "System.convCentreSpace", {} );
-    };
-
-    my.onCareGiverSearch = function(){
-        my.$alert("CAREGiver search not implemented for demo");
-    };
-
     // #### Pulse responses #### //
 
     my.$on( "pumpCo.form.list.response", function( pulse ) {
       // JCARNEY 01/06/18: commented out and ported over to dashboard.js
       // my.processReportsList( __get( "pulseBody.questionnaire", pulse ) );
       ProcessReportsList( __get( "pulseBody.questionnaire", pulse ), my.model.allReports );
-
     });
 
     my.$on( "pumpCo.user.appState.list.response", function( pulse ) {
@@ -265,7 +249,6 @@ the.App.onReady(function () {
      */
     // JCARNEY 01/06/18: commented out and ported over to dashboard.js
     // my.loadState = function( state ){
-    //   debugger
     //   if( state ){
     //     // Update the state object
     //     my.model.state = state;

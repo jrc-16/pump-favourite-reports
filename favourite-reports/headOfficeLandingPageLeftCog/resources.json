@@ -11,14 +11,14 @@
     // Basic configuration
     "script":   [
         "/system/common/roadie/navigation.js",
-        "/iotaa/localOfficeLandingPageLeftCog/main.js",
-        "/iotaa/common/src/dashboard.js",
+        "/iotaa/headOfficeLandingPageLeftCog/main.js",
+        "/iotaa/common/src/dashboard.js",        
         "/system/common/roadie/forms.js"
     ],
-    "html": "/iotaa/localOfficeLandingPageLeftCog/main.html",
+    "html":     "/iotaa/headOfficeLandingPageLeftCog/main.html",
     "style": "/iotaa/common/common.css",
-    "lang": "/iotaa/localOfficeLandingPageLeftCog/lang.json",
-    "image": [ "/iotaa/localOfficeLandingPageLeftCog/images/logo.png" ],
+    "lang":     "/iotaa/headOfficeLandingPageLeftCog/lang.json",
+    "image":    [ "/iotaa/headOfficeLandingPageLeftCog/images/logo.png" ],
     // The type of cog that is being created. Can be system, platform, or user
     "cogType": "system",
     // Params is a generic object for passing in custom / new information
@@ -27,26 +27,18 @@
         "unwrapExchange":"true",
 
         "basePath": "/system/fixtures",
-        "imageName": "/iotaa/localOfficeLandingPageLeftCog/images/logo.png",
-
-        "mocks": [
-          /* {
-            "request":"pumpCo.form.list.request",
-            "response":"pumpCo.form.list.response",
-            "url":"/iotaa/localOfficeLandingPageLeftCog/mocks/pumpCo.form.list.js"
-          } */
-        ]
+        "imageName": "/iotaa/headOfficeLandingPageLeftCog/images/logo.png"
     },
     // Capabilities detail what pulses ( traits ) a Cog can send and what pulses it would like to receive.
     "capability": [
         { "direction": "CONSUMER", "trait": "pumpco.system.core.cog", "version": "0.1" },
         { "direction": "PRODUCER", "trait": "internal.system.toast.update", "version": "0.1" },
 
-        // @JC 24/05/18: favourite reports
+        // @JC 28/05/18: favourite reports
         {"direction": "PRODUCER","trait": "pumpCo.form.list.request", "version": "0.1"},
         {"direction": "CONSUMER","trait": "pumpCo.form.list.response", "version": "0.1"},
 
-        // @JC 25/05/18: AppState pulses for favourite reports
+        // @JC 28/05/18: AppState pulses for favourite reports
         {"direction": "PRODUCER","trait": "pumpCo.user.appState.save.request", "version": "0.1"},
         {"direction": "PRODUCER","trait": "pumpCo.user.appState.list.request", "version": "0.1"},
         {"direction": "CONSUMER","trait": "pumpCo.user.appState.list.response", "version": "0.1"},
